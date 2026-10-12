@@ -8,20 +8,20 @@ export const couple = {
 export const gallery = [
   {
     id: 'together',
-    src: '/artwork/scroll/hero.webp',
-    alt: 'Đôi uyên ương trong tà áo dài tại một sân nhà cổ',
+    src: '/artwork/scroll/gallery1.jpg',
+    alt: 'Khoảnh khắc đầu tiên của chúng mình',
     caption: 'Ngày mình gọi hai tiếng chúng ta',
   },
   {
     id: 'details',
-    src: '/artwork/scroll/details.webp',
-    alt: 'Đôi nhẫn cưới trên tay cô dâu và chú rể',
+    src: '/artwork/scroll/gallery2.jpg',
+    alt: 'Khoảnh khắc ngọt ngào bên nhau',
     caption: 'Từ hôm nay, tay nắm tay',
   },
   {
     id: 'ceremony',
-    src: '/artwork/scroll/ceremony.webp',
-    alt: 'Đôi uyên ương trước cổng hoa trong buổi lễ cưới',
+    src: '/artwork/scroll/gallery3.jpg',
+    alt: 'Chặng đường hành trình của chúng mình',
     caption: 'Chặng đường mới bắt đầu',
   },
 ]

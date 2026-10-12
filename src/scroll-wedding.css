@@ -143,7 +143,7 @@ figure {
   min-height: 100svh;
   overflow: hidden;
   color: var(--paper);
-  background: #f6e6dc;
+  background: #1a0409;
 }
 
 .envelope-hero::before {
@@ -197,8 +197,9 @@ figure {
 
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(26, 7, 11, 0.82), rgba(30, 8, 13, 0.18) 58%, rgba(30, 8, 13, 0.25)),
-    linear-gradient(0deg, rgba(25, 6, 11, 0.72), transparent 45%);
+    linear-gradient(90deg, rgba(15, 3, 6, 0.92), rgba(20, 4, 9, 0.55) 55%, rgba(20, 4, 9, 0.45)),
+    linear-gradient(0deg, rgba(15, 3, 6, 0.88), transparent 50%),
+    linear-gradient(180deg, rgba(10, 2, 4, 0.55), transparent 30%);
 }
 
 .hero-monogram {
