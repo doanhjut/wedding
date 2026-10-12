@@ -29,7 +29,7 @@ describe('envelopeReducer', () => {
     })
   })
 
-  it('keeps the opening fallback aligned with the four-second choreography', () => {
-    expect(envelopeState.OPENING_FALLBACK_MS).toBe(4300)
+  it('keeps the opening fallback aligned with the card crossfade', () => {
+    expect(envelopeState.OPENING_FALLBACK_MS).toBe(7600)
   })
 })

@@ -6,6 +6,7 @@ import {
 } from './envelopeState'
 import { useScrollMotion } from './scrollMotion'
 import EnvelopeHero from './sections/EnvelopeHero'
+import LingeringButterflies from './sections/LingeringButterflies'
 import WeddingSections from './sections/WeddingSections'
 
 export default function WeddingExperience({
@@ -55,6 +56,8 @@ export default function WeddingExperience({
         onOpen={() => dispatch({ type: 'open', reduced })}
         onFinish={() => dispatch({ type: 'finish' })}
       />
+
+      {envelope.phase !== 'sealed' && <LingeringButterflies />}
 
       <div className={`wedding-content ${opened ? 'is-ready' : ''}`}>
         <WeddingSections onSaveCalendar={onSaveCalendar} onShare={onShare} />

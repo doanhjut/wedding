@@ -1,5 +1,5 @@
 export const initialEnvelopeState = { phase: 'sealed' }
-export const OPENING_FALLBACK_MS = 4300
+export const OPENING_FALLBACK_MS = 7600
 
 export function envelopeReducer(state, action) {
   if (action.type === 'skip') {

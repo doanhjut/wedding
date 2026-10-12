@@ -143,9 +143,7 @@ figure {
   min-height: 100svh;
   overflow: hidden;
   color: var(--paper);
-  background:
-    radial-gradient(circle at 50% 38%, rgba(240, 210, 120, 0.18), transparent 33%),
-    linear-gradient(145deg, #570818, #b10e33 58%, #700923);
+  background: #f6e6dc;
 }
 
 .envelope-hero::before {
@@ -173,7 +171,7 @@ figure {
 
 .phase-opening .hero-reveal {
   visibility: visible;
-  animation: reveal-hero 1.25s 2.75s cubic-bezier(0.22, 0.7, 0.16, 1) forwards;
+  animation: reveal-hero 1.05s 0.85s cubic-bezier(0.22, 0.7, 0.16, 1) forwards;
 }
 
 .phase-opened .hero-reveal {
@@ -234,7 +232,7 @@ figure {
 }
 
 .phase-opening .hero-copy {
-  animation: hero-copy-in 1s 3s ease forwards;
+  animation: hero-copy-in 0.85s 1.55s ease forwards;
 }
 
 .phase-opened .hero-copy {
@@ -485,6 +483,476 @@ figure {
 .envelope-instruction span {
   margin-right: 0.4rem;
   color: var(--gold-light);
+}
+
+.card-scene {
+  position: absolute;
+  z-index: 5;
+  inset: 0;
+  color: #3f3128;
+}
+
+.phase-opening .card-scene {
+  animation: scene-away 0.8s 0.55s ease forwards;
+  pointer-events: none;
+}
+
+.butterfly-swarm {
+  position: absolute;
+  z-index: 30;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.butterfly-swarm.is-passing {
+  animation: butterfly-pass 6.4s linear forwards;
+}
+
+.butterfly-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.butterfly {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--size);
+  height: auto;
+  animation: butterfly-flight var(--duration) var(--delay) linear both;
+}
+
+.butterfly-sprite {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+@keyframes butterfly-pass {
+  0%,
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes butterfly-flight {
+  0% {
+    opacity: 0;
+    transform: translate3d(-28vw, var(--y), 0) rotate(-8deg) scaleX(var(--face));
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  48% {
+    transform: translate3d(48vw, calc(var(--y) + var(--wave)), 0) rotate(7deg) scaleX(var(--face));
+  }
+
+  90% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(122vw, var(--y), 0) rotate(-5deg) scaleX(var(--face));
+  }
+}
+
+.linger-butterflies {
+  position: fixed;
+  z-index: 45;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.linger-pair {
+  position: absolute;
+  top: 16vh;
+  left: 4vw;
+  perspective: 900px;
+}
+
+.linger-pair.is-entering {
+  animation: pair-enter 2.15s cubic-bezier(0.22, 0.7, 0.2, 1) forwards;
+}
+
+.linger-pair.is-gliding {
+  animation: pair-weave 16s ease-in-out infinite;
+}
+
+.flap-bug {
+  position: absolute;
+  width: var(--size);
+  aspect-ratio: var(--ratio);
+  transform-style: preserve-3d;
+  animation: butterfly-tumble 180s linear infinite;
+  filter: drop-shadow(0 10px 8px rgba(80, 36, 56, 0.2));
+}
+
+.linger-follow {
+  top: 16px;
+  left: -42px;
+  animation-duration: 180s;
+}
+
+.linger-lead {
+  top: 0;
+  left: 0;
+}
+
+.wing {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.wing-left {
+  clip-path: inset(0 50% 0 0);
+  transform-origin: right center;
+  animation: flap-left 0.18s ease-in-out infinite alternate;
+}
+
+.wing-right {
+  clip-path: inset(0 0 0 50%);
+  transform-origin: left center;
+  animation: flap-right 0.18s ease-in-out infinite alternate;
+}
+
+.linger-follow .wing {
+  animation-duration: 0.21s;
+}
+
+@keyframes flap-left {
+  from {
+    transform: rotateY(4deg);
+  }
+
+  to {
+    transform: rotateY(42deg);
+  }
+}
+
+@keyframes flap-right {
+  from {
+    transform: rotateY(-4deg);
+  }
+
+  to {
+    transform: rotateY(-42deg);
+  }
+}
+
+@keyframes pair-enter {
+  0% {
+    opacity: 0;
+    transform: translate3d(-48vw, 10vh, 0);
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pair-weave {
+  0%,
+  100% {
+    transform: translate3d(8vw, 18vh, 0);
+  }
+
+  28% {
+    transform: translate3d(30vw, 6vh, 0);
+  }
+
+  55% {
+    transform: translate3d(56vw, 22vh, 0);
+  }
+
+  78% {
+    transform: translate3d(34vw, 12vh, 0);
+  }
+}
+
+@keyframes butterfly-tumble {
+  0%,
+  100% {
+    transform: rotateX(6deg) rotateY(-14deg) rotateZ(-8deg);
+  }
+
+  25% {
+    transform: rotateX(-8deg) rotateY(12deg) rotateZ(10deg);
+  }
+
+  50% {
+    transform: rotateX(8deg) rotateY(-16deg) rotateZ(-6deg);
+  }
+
+  75% {
+    transform: rotateX(-6deg) rotateY(14deg) rotateZ(9deg);
+  }
+}
+
+@media (max-width: 700px) {
+  .butterfly {
+    width: calc(var(--size) * 0.9);
+  }
+
+  .linger-follow {
+    top: 12px;
+    left: -34px;
+  }
+}
+
+.phase-opened .card-scene {
+  display: none;
+}
+
+.card-bg-frame,
+.card-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.card-bg {
+  max-width: none;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.card-layout {
+  position: absolute;
+  z-index: 4;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 480px);
+  margin: 0 auto;
+  padding: max(1.6rem, 4vh) 1rem 8vh;
+}
+
+.card-copy {
+  text-align: center;
+}
+
+.card-script {
+  color: #c6a15a;
+  font-family: "Dancing Script", cursive;
+  font-size: clamp(2rem, 9vw, 3.4rem);
+  line-height: 1;
+}
+
+.card-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  margin-top: 0.45rem;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.2rem, 11.2vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.card-title span {
+  background-image: linear-gradient(180deg, #f4e2a6 0%, #e0b85a 40%, #b8862a 74%, #8d6418 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-transform: uppercase;
+}
+
+.double-happiness {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 1.45em;
+  height: 1.45em;
+  border: 1.5px solid #e8cf8e;
+  border-radius: 50%;
+  color: #7a5414;
+  background: radial-gradient(circle at 35% 30%, #fff6d8, #e4c06a 46%, #b8892e 80%);
+  box-shadow: inset 0 0 0 2px rgba(255, 248, 220, 0.45);
+  font-family: "Noto Serif SC", serif;
+  font-size: 0.46em;
+  font-style: normal;
+  line-height: 1;
+}
+
+.card-blossom {
+  display: block;
+  width: 4.4rem;
+  height: auto;
+  margin: 0.45rem auto 0.15rem;
+}
+
+.card-names {
+  color: #3f3128;
+  font-size: clamp(0.72rem, 2.7vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.card-envelope {
+  width: min(78%, 340px);
+  margin-top: 0.85rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.card-envelope:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
+.card-envelope img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 18px 24px rgba(92, 48, 48, 0.22));
+  transition: transform 220ms ease;
+}
+
+.card-envelope:not(:disabled):hover img,
+.card-envelope:not(:disabled):focus-visible img {
+  transform: translateY(-4px) scale(1.015);
+}
+
+.card-envelope:focus-visible {
+  outline: 2px solid #b8862f;
+  outline-offset: 6px;
+  border-radius: 0.4rem;
+}
+
+.card-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 0.7rem;
+  color: #6e5648;
+  font-size: 0.8rem;
+}
+
+.card-hint span {
+  color: #c6a15a;
+  font-size: 0.68rem;
+}
+
+.card-couple {
+  width: auto;
+  height: min(32vh, 280px);
+  max-width: 72%;
+  margin-top: 0.55rem;
+  object-fit: contain;
+}
+
+.card-plaque {
+  position: relative;
+  z-index: 5;
+  width: min(94%, 430px);
+  height: auto;
+  margin-top: auto;
+}
+
+.card-waves {
+  position: absolute;
+  z-index: 3;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: clamp(68px, 12vh, 150px);
+  pointer-events: none;
+}
+
+@media (min-width: 901px) {
+  .card-bg {
+    object-position: center 42%;
+  }
+
+  .card-layout {
+    width: min(1180px, calc(100% - 1.5rem));
+    padding: 0;
+  }
+
+  .card-copy {
+    position: absolute;
+    top: 3.2%;
+    right: 6%;
+    left: 6%;
+  }
+
+  .card-script {
+    font-size: clamp(3.1rem, 4.5vw, 4.5rem);
+  }
+
+  .card-title {
+    font-size: clamp(3.3rem, 5.2vw, 5.3rem);
+  }
+
+  .card-names {
+    font-size: clamp(0.92rem, 1.25vw, 1.15rem);
+    letter-spacing: 0.26em;
+  }
+
+  .card-envelope {
+    position: absolute;
+    top: 32%;
+    left: 50%;
+    width: min(40%, 440px);
+    margin: 0;
+    transform: translateX(-50%);
+  }
+
+  .card-hint {
+    position: absolute;
+    top: 64%;
+    right: 0;
+    left: 0;
+    margin: 0;
+  }
+
+  .card-couple {
+    position: absolute;
+    bottom: 1%;
+    left: 0;
+    height: 46%;
+    margin: 0;
+  }
+
+  .card-plaque {
+    position: absolute;
+    bottom: 4.5%;
+    left: 49%;
+    width: min(44%, 500px);
+    margin: 0;
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 900px) {
+  .card-bg {
+    object-position: center center;
+  }
 }
 
 .hero-scroll-cue {
