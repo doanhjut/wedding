@@ -53,14 +53,14 @@ export const loveNotes = [
     from: 'Lưu Doanh gửi Minh Trang',
     message:
       'Từ hôm nay, mọi ngày bình thường đều trở thành ngày của chúng ta. Anh hứa sẽ cùng em đi qua những mùa vui và cả những ngày cần một bàn tay nắm chặt.',
-    image: '/artwork/scroll/ceremony.webp',
+    image: '/artwork/scroll/lovenote1.png',
   },
   {
     id: 'from-bride',
     from: 'Minh Trang gửi Lưu Doanh',
     message:
       'Giữa rất nhiều con đường, em chọn con đường có anh. Mong rằng mỗi ngày sau hôm nay, chúng ta vẫn nhìn nhau bằng ánh mắt dịu dàng như thuở đầu.',
-    image: '/artwork/scroll/details.webp',
+    image: '/artwork/scroll/lovenote2.png',
   },
 ]
 
@@ -83,6 +83,7 @@ export const families = [
     father: 'Ông Lưu Xuân Diệu',
     mother: 'Bà Trần Thị Tho',
     address: 'Thôn Ninh Thành, xã Vĩnh Lại, TP Hải Phòng',
+    mapUrl: 'https://maps.app.goo.gl/5EedeBUAGbtghdkz5',
   },
   {
     id: 'bride',
@@ -90,6 +91,7 @@ export const families = [
     father: 'Ông Trần Quang Hinh',
     mother: 'Bà Nguyễn Thị Loan',
     address: 'Tổ dân phố Đông Mỹ Thắng, phường Đông A, tỉnh Ninh Bình',
+    mapUrl: 'https://maps.app.goo.gl/UpzWQTp2UiYwnmfJA',
   },
 ]
 
@@ -103,6 +105,7 @@ export const events = [
     side: 'Nhà gái',
     place: 'Tư gia nhà gái',
     address: brideFamily.address,
+    mapUrl: brideFamily.mapUrl,
     time: '10:00',
     weekday: 'Thứ bảy',
     date: '24/10/2026',
@@ -116,6 +119,7 @@ export const events = [
     side: 'Nhà gái',
     place: 'Tư gia nhà gái',
     address: brideFamily.address,
+    mapUrl: brideFamily.mapUrl,
     time: '08:00',
     weekday: 'Chủ nhật',
     date: '25/10/2026',
@@ -129,6 +133,7 @@ export const events = [
     side: 'Nhà trai',
     place: 'Tư gia nhà trai',
     address: groomFamily.address,
+    mapUrl: groomFamily.mapUrl,
     time: '11:00',
     weekday: 'Chủ nhật',
     date: '25/10/2026',
@@ -142,6 +147,7 @@ export const events = [
     side: 'Nhà trai',
     place: 'Tư gia nhà trai',
     address: groomFamily.address,
+    mapUrl: groomFamily.mapUrl,
     time: '12:00',
     weekday: 'Chủ nhật',
     date: '25/10/2026',

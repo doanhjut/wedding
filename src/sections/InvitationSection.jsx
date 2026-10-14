@@ -31,6 +31,20 @@ export default function InvitationSection({ onSaveCalendar, onShare }) {
                 <strong>{family.father}</strong>
                 <strong>{family.mother}</strong>
                 <p>{family.address}</p>
+                {family.mapUrl && (
+                  <a
+                    href={family.mapUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="map-link"
+                    aria-label={`Xem bản đồ: ${family.address}`}
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path fillRule="evenodd" d="M11.54 22.351l.07.04.028.016a.76.76 0 00.723 0l.028-.015.071-.041a16.975 16.975 0 001.144-.742 19.58 19.58 0 002.683-2.282c1.944-2.013 3.5-4.749 3.5-8.05a7.824 7.824 0 00-15.647 0c0 3.301 1.556 6.037 3.5 8.05a19.579 19.579 0 002.682 2.282 16.975 16.975 0 001.145.742zM12 13.5a3 3 0 100-6 3 3 0 000 6z" clipRule="evenodd" />
+                    </svg>
+                    Xem bản đồ
+                  </a>
+                )}
               </article>
             ))}
           </div>

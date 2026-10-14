@@ -2,7 +2,7 @@ export default function ThankYouSection({ onSaveCalendar, onShare }) {
   return (
     <footer id="thank-you" className="thank-you-section">
       <img
-        src="/artwork/scroll/ceremony.webp"
+        src="/artwork/scroll/thankyou.png"
         alt=""
         loading="lazy"
         decoding="async"

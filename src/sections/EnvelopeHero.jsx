@@ -11,7 +11,6 @@ export default function EnvelopeHero({ phase, onOpen, onFinish }) {
           src="/artwork/scroll/hero.webp"
           alt="Minh họa đôi uyên ương trong trang phục cưới Việt Nam"
         />
-        <div className="hero-shade" aria-hidden="true" />
         <div className="hero-monogram" aria-hidden="true">
           D <i /> M
         </div>

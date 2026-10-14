@@ -1723,6 +1723,37 @@ figure {
   font-style: normal;
 }
 
+/* Map link */
+.map-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 0.55rem;
+  padding: 0.28rem 0.65rem;
+  border: 1px solid rgba(178, 13, 50, 0.3);
+  border-radius: 2rem;
+  color: var(--wine);
+  background: rgba(178, 13, 50, 0.06);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background 200ms ease, border-color 200ms ease, color 200ms ease;
+}
+
+.map-link:hover {
+  background: var(--wine);
+  border-color: var(--wine);
+  color: #fff;
+}
+
+.map-link svg {
+  width: 0.85rem;
+  height: 0.85rem;
+  flex-shrink: 0;
+}
+
 /* Venues */
 .venue-section {
   background: var(--paper);

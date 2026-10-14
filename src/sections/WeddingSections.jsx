@@ -4,7 +4,6 @@ import LoveNotes from './LoveNotes'
 import RSVPSection from './RSVPSection'
 import ScheduleTimeline from './ScheduleTimeline'
 import ThankYouSection from './ThankYouSection'
-import VenueSection from './VenueSection'
 import WeddingGallery from './WeddingGallery'
 
 export default function WeddingSections({ onSaveCalendar, onShare }) {
@@ -15,7 +14,6 @@ export default function WeddingSections({ onSaveCalendar, onShare }) {
       <CoupleProfiles />
       <LoveNotes />
       <ScheduleTimeline />
-      <VenueSection />
       <RSVPSection />
       <ThankYouSection onSaveCalendar={onSaveCalendar} onShare={onShare} />
     </>
